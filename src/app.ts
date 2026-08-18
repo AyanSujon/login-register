@@ -12,6 +12,7 @@ import config from "./app/config";
 import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
 import { notFound } from "./app/middleware/notFound";
 import { AuthRoutes } from "./app/module/auth/auth.route";
+import { redisClient } from "./app/lib/redis";
 
 const app: Application = express();
 
@@ -38,12 +39,13 @@ app.get("/test", async (req: Request, res: Response, next : NextFunction) => {
 		// 100000 > 999999 > 1000000
 			const otp = crypto.randomInt(100000, 1000000) // 1, 2, 3, 4, 5, 6,7,8 ,9, 10 => X-11
 		
-			// await redisClient.set("forgot-password-otp:patient1@gmail.com", "123456", {
+			// await redisClient.set("forgot-password-otp:patient1@gmail.com", otp, {
 			// 	expiration : {
 			// 		type : "EX",
 			// 		value : 60
 			// 	}
 			// })
+			
 
 		
 

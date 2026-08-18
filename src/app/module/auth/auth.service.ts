@@ -457,7 +457,7 @@ const resetPassword = async (payload : IResetPasswordPayload) => {
 
 	await redisClient.del([key]);
 
-	const tempatePath = path.join(process.cwd(), "src/app/templates/reset-password-success.ejs")
+	const tempatePath = path.join(process.cwd(), "src/app/templates/reset-password-success.ejs");
 
 	const templateData = {
 		name: isUserExist.name

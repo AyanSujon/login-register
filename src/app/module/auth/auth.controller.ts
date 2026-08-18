@@ -169,6 +169,8 @@ const forgotPassword = catchAsync(async (req: Request, res: Response) => {
 		data: null,
 	});
 });
+
+
 const resetPassword = catchAsync(async (req: Request, res: Response) => {
 	const payload = req.body;
 
